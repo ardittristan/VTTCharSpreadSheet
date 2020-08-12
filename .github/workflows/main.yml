@@ -37,5 +37,5 @@ jobs:
         commit_message: Apply automatic changes
         branch: master
         commit_options: '--no-verify --signoff'
-        file_pattern: datacalc.js
+        file_pattern: exports.json
         push_options: '--force'
