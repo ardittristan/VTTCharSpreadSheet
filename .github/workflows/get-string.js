@@ -1,2 +1,2 @@
-var exports = require('../../datacalc.js').default;
-console.log(Object.keys(exports).toString());
+var output = require('../../datacalc.js').default;
+console.log(Object.keys(output).toString());
