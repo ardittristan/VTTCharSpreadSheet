@@ -27,7 +27,7 @@ jobs:
     - name: Make file
       uses: DamianReeves/write-file-action@v1.0
       with:
-        path: ./.github/workflows/out/exports.json
+        path: ./exports.json
         contents: |
           echo "${{ steps.get-string.outputs.textcontent }}"
         write-mode: overwrite
