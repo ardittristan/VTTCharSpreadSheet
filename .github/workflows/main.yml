@@ -14,7 +14,7 @@ jobs:
     - name: Get String
       shell: bash
       id: get-string
-      run: echo "::set-output name=tcontent::$(node .github/workflows/get-string.js)"
+      run: echo "::set-output name=tcontent::$(node ../.github/workflows/get-string.js)"
 
   build:
     runs-on: ubuntu-latest
