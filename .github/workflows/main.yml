@@ -30,3 +30,12 @@ jobs:
         patch-syntax: |
           + /exports => "${{ steps.get-string.outputs.textcontent }}"
         fail-if-error: true
+
+      - name: Commit File
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply automatic changes
+          branch: master
+          commit_options: '--no-verify --signoff'
+          file_pattern: datacalc.js
+          push_options: '--force'
