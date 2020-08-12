@@ -189,6 +189,7 @@ const exportList = {
 
 /**
  * replaces comma with csv friendly comma
+ * 
  * @param  {String} string
  */
 function replaceCommas(string) {
