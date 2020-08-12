@@ -13,7 +13,6 @@ jobs:
     steps:
     - name: Get String
       shell: bash
-      working-directory: ./.github/workflows
       id: get-string
       run: echo "::set-output name=tcontent::$(node ./.github/workflows/get-string.js)"
 
