@@ -20,10 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: getinfo
     steps:
-    - name: Write File
-      uses: DamianReeves/write-file-action@v1.0
+    - uses: actions/checkout@v1
+
+    - name: Patch File
+      uses: onlyutkarsh/patch-files-action@v1.0.1
       with:
-        path: ./.github/workflows/out/exports.json
-        contents: |
-          echo ${{ needs.getinfo.outputs.textcontent }}
-        write-mode: overwrite
+        files: ./.github/workflows/out/exports.json
+        patch-syntax: |
+          + /exports => "${{ needs.getinfo.outputs.textcontent }}""
+        fail-if-error: true
