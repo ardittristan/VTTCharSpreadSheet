@@ -6,26 +6,20 @@ on:
       - 'datacalc.js'
 
 jobs:
-  getinfo:
+  build:
     runs-on: ubuntu-latest
-    outputs:
-      textcontent: ${{ steps.get-string.outputs.tcontent }}
     steps:
+    - uses: actions/checkout@v2
+
     - name: Get String
       shell: bash
       id: get-string
-      run: echo "::set-output name=tcontent::$(node ../.github/workflows/get-string.js)"
-
-  build:
-    runs-on: ubuntu-latest
-    needs: getinfo
-    steps:
-    - uses: actions/checkout@v1
+      run: echo "::set-output name=textcontent::$(node ../.github/workflows/get-string.js)"
 
     - name: Patch File
       uses: onlyutkarsh/patch-files-action@v1.0.1
       with:
         files: ./.github/workflows/out/exports.json
         patch-syntax: |
-          + /exports => "${{ needs.getinfo.outputs.textcontent }}""
+          + /exports => "${{ steps.get-string.outputs.textcontent }}"
         fail-if-error: true
