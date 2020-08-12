@@ -6,9 +6,9 @@
 	"author": "ardittristan#0001",
 	"esmodules": ["main.js"],
 	 "socket": true,
-    "url": "",
-    "manifest": "",
-    "download": "",
+    "url": "https://github.com/ardittristan/VTTCharSpreadSheet",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTCharSpreadSheet/master/module.json",
+    "download": "https://github.com/ardittristan/VTTCharSpreadSheet/archive/master.zip",
 	"minimumCoreVersion": "0.5.5",
-	"compatibleCoreVersion": "0.6.2"
+	"compatibleCoreVersion": "0.7.0"
 }
