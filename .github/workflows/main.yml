@@ -11,6 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Set Node Version
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '14'
+
     - name: Get String
       shell: bash
       id: get-string
