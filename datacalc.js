@@ -1,4 +1,4 @@
-const exports = {
+const exportList = {
     updated: function () {
         let date = new Date(Date.now());
         return date.toUTCString().split(",")[1];
@@ -197,4 +197,4 @@ function replaceCommas(string) {
     return string.replace(/,/g, "❟");
 }
 
-export default exports;
+export default exportList;
