@@ -1,0 +1,18 @@
+<form autocomplete="off" onsubmit="event.preventDefault()">
+    <div style="overflow-y: auto; max-height: 60vh;">
+        <table style="width: 100%;">
+            {{#each exports}}
+            <tr>
+                <td style="white-space: nowrap; display: flex;">
+                    <input type="checkbox" id="{{this.name}}" value="{{this.name}}" name="{{this.name}}" {{checked this.checked}}>
+                    <label for="{{this.name}}" style="align-self: center;">{{this.name}}</label>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+        <button type="submit">Ok</button>
+        <button type="button" class="cancelButton">Cancel</button>
+    </div>
+</form>

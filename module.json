@@ -1,0 +1,14 @@
+{
+	"name": "charspreadsheet",
+	"title": "Google charsheet",
+	"description": "",
+	"version": "1.2.1",
+	"author": "ardittristan#0001",
+	"esmodules": ["main.js"],
+	 "socket": true,
+    "url": "",
+    "manifest": "",
+    "download": "",
+	"minimumCoreVersion": "0.5.5",
+	"compatibleCoreVersion": "0.6.2"
+}

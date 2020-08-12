@@ -1,0 +1,25 @@
+<form autocomplete="off" onsubmit="event.preventDefault()">
+    <div style="overflow-y: auto; max-height: 60vh; width: fit-content;">
+        <table style="width: 100%;">
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+            </tr>
+            {{#each actors}}
+            <tr>
+                <td style="white-space: nowrap; display: flex;">
+                    <input type="checkbox" id="{{this.id}}" value="{{this.id}}" name="{{this.id}}" {{checked this.checked}}>
+                    <label for="{{this.id}}" style="align-self: center;">{{this.name}}</label>
+                </td>
+                <td style="white-space: nowrap;">
+                    <p style="-webkit-user-select: all; -moz-user-select: all; -ms-user-select: all; user-select: all;">{{this.id}}</p>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+        <button type="submit">Ok</button>
+        <button type="button" class="cancelButton">Cancel</button>
+    </div>
+</form>
