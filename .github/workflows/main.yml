@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
 
     - name: Set Node Version
       uses: actions/setup-node@v2-beta
@@ -21,6 +22,7 @@ jobs:
       run: echo "::set-output name=textcontent::$(node ./.github/workflows/get-string.js)"
 
     - uses: actions/checkout@v2
+
     - name: Patch File
       uses: onlyutkarsh/patch-files-action@v1.0.1
       with:
