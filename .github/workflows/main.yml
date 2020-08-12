@@ -23,13 +23,13 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - name: Patch File
-      uses: onlyutkarsh/patch-files-action@v1.0.1
+    - name: Make file
+      uses: DamianReeves/write-file-action@v1.0
       with:
-        files: ./.github/workflows/out/exports.json
-        patch-syntax: |
-          + /exports => "${{ steps.get-string.outputs.textcontent }}"
-        fail-if-error: true
+        path: ./.github/workflows/out/exports.json
+        contents: |
+          echo "${{ steps.get-string.outputs.textcontent }}"
+        write-mode: overwrite
 
     - name: Commit File
       uses: stefanzweifel/git-auto-commit-action@v4
