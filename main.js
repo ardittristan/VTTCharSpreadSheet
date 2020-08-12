@@ -348,7 +348,7 @@ function nth_occurrence(string, char, nth) {
  */
 async function upload(source, path, file, options) {
     if (typeof (ForgeVTT_FilePicker) !== "undefined") {
-        const SilentForgeFilePicker = await import('./customFilepickers/forgeFilePicker.js');
+        const SilentForgeFilePicker = (await import('./customFilepickers/forgeFilePicker.js')).default;
         return await SilentForgeFilePicker.upload(source, path, file, options);
     } else {
         return await SilentFilePicker.upload(source, path, file, options);
