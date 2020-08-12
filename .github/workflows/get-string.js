@@ -1,2 +1,2 @@
-var exports = require('./.github/workflows/datacalc.js').default;
+var exports = require('../../datacalc.js').default;
 console.log(Object.keys(exports).toString());
