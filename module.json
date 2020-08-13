@@ -1,7 +1,7 @@
 {
 	"name": "charspreadsheet",
 	"title": "Google charsheet",
-	"description": "",
+	"description": "exports actor data to csv format that can be read from eg. google sheets",
 	"version": "1.0.1",
 	"author": "ardittristan#0001",
 	"esmodules": ["main.js"],
