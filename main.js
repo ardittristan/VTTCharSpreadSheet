@@ -72,8 +72,8 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("setup", async () => {
-    await manageFile({ action: "createDirectory", storage: "data", target: "/actorAPI" }, { bucket: undefined });
-    await manageFile({ action: "createDirectory", storage: "data", target: `/actorAPI/${game.world.name}` }, { bucket: undefined });
+    await FilePicker.createDirectory("data", "actorAPI", {}).catch(() => {})
+    await FilePicker.createDirectory("data", `actorAPI/${game.world.name}`, {}).catch(() => {})
     const locationFile = new File([" "], "location-getter", { type: "text/plain", lastModified: Date.now() });
 
     let response = await upload("data", `actorAPI/${game.world.name}`, locationFile, {});
@@ -232,12 +232,6 @@ class ExportAllActors extends FormApplication {
 
         ui.notifications.info("Updated actor data!");
     }
-}
-
-async function manageFile(data, options) {
-    return new Promise(resolve => {
-        game.socket.emit("manageFiles", data, options, resolve);
-    });
 }
 
 async function makeCsvFromActor(actorId) {
